@@ -28,7 +28,7 @@ const app = Vue.createApp({
       this.research = '';
     },
     detailHeros(id){
-      const urlDetail = `/detail.html?id=${id}`;
+      const urlDetail = `./detail.html?id=${id}`;
       window.location.href = urlDetail;
     }
   }

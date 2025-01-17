@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios@latest"></script>
+    <script src="src/navbar.js"></script>
+    <link rel="stylesheet" href="src/assets/style.css">
+    <title>Les Superhéros</title>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <div id="superPower" class="container my-4">
+      <h1>SuperPower Matcher</h1>
+      <div class="my-4">
+        <label for="strength-slider" class="form-label"><strong>Force (min : {{ filters.strength }})</strong></label><br>
+        <input type="range" id="strength-slider" v-model="filters.strength" min="0" max="100" class="form-range"><br>
+        
+        <label for="intelligence-slider" class="form-label"><strong>Intelligence (min : {{ filters.intelligence }})</strong></label><br>
+        <input type="range" id="intelligence-slider" v-model="filters.intelligence" min="0" max="100" class="form-range"><br>
+
+        <label for="speed-slider" class="form-label"><strong>Vitesse (min : {{ filters.speed }})</strong></label><br>
+        <input type="range" id="speed-slider" v-model="filters.speed" min="0" max="100" class="form-range bg-gray">
+      </div>
+      <br>
+      <button class="btn btn-primary mb-3">Rechercher</button>
+      <br>
+      <h2>Résultats : </h2>
+      <ul>
+        <li v-for="superheros in filteredSuperheros" :key="superheros.id">
+          <p>{{ superheros.name }}
+        </li>
+      </ul>
+    </div>
+    <script src="src/superPower.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+input[type="range"].form-range {
+    background: grey;
+    height: 10px;
+    width: 20%;
+}
+
+input[type="range"].form-range::-webkit-slider-thumb {
+    border: 2px solid #007bff;
+}

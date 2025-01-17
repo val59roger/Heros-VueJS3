@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios@latest"></script>
+    <script src="src/navbar.js"></script>
+    <title>Les Superhéros</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Vue App -->
+    <div id="app" class="container my-4">
+      <h1 class="my-4">Liste des Superhéros</h1>
+      <input type="checkbox" class="my-4" v-model="isChecked"> Afficher les pouvoirs
+
+      <br><input type="text" class="form-control mb-3" v-model="research" placeholder="recherche par nom :">
+
+      <br><button v-on:click="reinitialiastion" class="btn btn-primary mb-3">réinitialiser</button>
+
+      <ul class="list-group">
+        <li v-for="superheros in filteredSuperheros" :key="superheros.id" v-on:click="detailHeros((superheros.id))" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center w-100">
+          <h5>{{ superheros.name }}</h5>
+          <img :src="superheros.images.md" alt="profil" class="rounded-circle align-items-center" style="width: 50px;">
+          <p v-if="isChecked">Intelligence : {{ superheros.powerstats.intelligence }}
+            Force : {{ superheros.powerstats.strength }}
+            Vitesse : {{ superheros.powerstats.speed }}
+            Durabilité : {{ superheros.powerstats.durability }}
+            Pouvoir : {{ superheros.powerstats.power }} 
+            Combat : {{ superheros.powerstats.combat }}</p>
+          <small>{{ superheros.id }}</small>
+        </li>
+      </ul>
+    </div>
+    
+    <script src="src/app.js"></script>
+
+  </body>
+</html>

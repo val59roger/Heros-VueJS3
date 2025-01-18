@@ -1,29 +1,33 @@
-# vue-tp
+# vue-tp :
 
-This template should help get you started developing with Vue 3 in Vite.
+Ce tp permet de manipuler/gérer une api.
 
-## Recommended IDE Setup
+## Lien API :
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[API](https://github.com/rtomczak/superhero-api/tree/0.3.0/api).
 
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+## Installation projet Local :
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilation et transfert à chaud pour le développement
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Compiler et minimiser pour la production
 
 ```sh
 npm run build
 ```
+
+## Projet en ligne :
+
+[lien](https://val59roger.github.io/Heros-VueJS3/index.html).

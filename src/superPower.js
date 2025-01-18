@@ -20,9 +20,6 @@ const app = Vue.createApp({
         },
     },  
     mounted() {
-        // Récupérer l'ID depuis l'URL
-        const params = new URLSearchParams(window.location.search);
-
         // Charger les données pour ce héros spécifique
         axios.get('https://cdn.jsdelivr.net/gh/rtomczak/superhero-api@0.3.0/api/all.json')
           .then(response => {

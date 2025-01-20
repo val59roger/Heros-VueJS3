@@ -5,14 +5,15 @@ const app = Vue.createApp({
       }
     },    
     mounted() {
-        // Récupérer l'ID depuis l'URL
+        /* Récupérer l'ID depuis l'URL grace à la méthode GET */
         const params = new URLSearchParams(window.location.search);
         const heroId = params.get('id');
 
-        // Charger les données pour ce héros spécifique
+        /* appel de l'api */
         axios.get('https://cdn.jsdelivr.net/gh/rtomczak/superhero-api@0.3.0/api/all.json')
           .then(response => {
-            this.hero = response.data.find(h => h.id == heroId); // Trouver le héros correspondant
+            /* récupération de toutes les données du héros grace à son id*/
+            this.hero = response.data.find(h => h.id == heroId);
           })
           .catch(error => {
             console.error('Erreur lors du chargement des détails du héros:', error);

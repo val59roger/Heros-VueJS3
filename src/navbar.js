@@ -1,6 +1,10 @@
-fetch('navbar.html') // Charge le fichier navbar.html
-    .then(response => response.text()) // Récupère le contenu sous forme de texte
+/* Charge le fichier navbar.html */
+fetch('navbar.html')
+    /* Récupère le contenu sous forme de texte */
+    .then(response => response.text())
     .then(data => {
-    document.getElementById('navbar-placeholder').innerHTML = data; // Insère le contenu dans le div
+    /* Insère le contenu dans le div */
+    document.getElementById('navbar-placeholder').innerHTML = data;
+    /* Gestion des erreurs */
     })
-    .catch(error => console.error('Erreur lors du chargement de la navbar:', error)); // Gestion des erreurs
+    .catch(error => console.error('Erreur lors du chargement de la navbar:', error));

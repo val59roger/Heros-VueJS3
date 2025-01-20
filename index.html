@@ -16,13 +16,18 @@
     <!-- Vue App -->
     <div id="app" class="container my-4">
       <h1 class="my-4">Liste des Superhéros</h1>
+
+      <!-- mise en place d'une checkbox avec une association à v-model pour récupérer en live son état -->
       <input type="checkbox" class="my-4" v-model="isChecked"> Afficher les pouvoirs
 
+      <!-- mise en place d'un champs de texte avec une association à v-model pour récupérer en live son contenue -->
       <br><input type="text" class="form-control mb-3" v-model="research" placeholder="recherche par nom :">
 
+      <!-- mise en place d'un bouton avec une association à v-on pour lancer 'reinitialiser' lors du click -->
       <br><button v-on:click="reinitialiastion" class="btn btn-primary mb-3">réinitialiser</button>
 
       <ul class="list-group">
+        <!-- mise en place d'une liste avec une boucle pour sortir tout les héros et une association à v-on pour lancer 'detailHeros' lors du click -->
         <li v-for="superheros in filteredSuperheros" :key="superheros.id" v-on:click="detailHeros((superheros.id))" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center w-100">
           <h5>{{ superheros.name }}</h5>
           <img :src="superheros.images.md" alt="profil" class="rounded-circle align-items-center" style="width: 50px;">

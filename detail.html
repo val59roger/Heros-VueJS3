@@ -14,6 +14,7 @@
     <div id="navbar-placeholder"></div>
     <div id="detail" class="container my-4">
         <h1 class="my-4">Détail du Superhéros</h1>
+        <!-- mise en place d'un affichage différents en fonction de la validation de la condition grace à v-if -->
         <div v-if="hero">
             <h2>{{ hero.name }}</h2>
             <img :src="hero.images.md" alt="Profil" class="img-thumbnail mb-3">

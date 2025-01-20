@@ -16,6 +16,7 @@
     <div id="superPower" class="container my-4">
       <h1>SuperPower Matcher</h1>
       <div class="my-4">
+        <!-- association à v-model pour récupérer les valeurs des différents curseur -->
         <label for="strength-slider" class="form-label"><strong>Force (min : {{ filters.strength }})</strong></label><br>
         <input type="range" id="strength-slider" v-model="filters.strength" min="0" max="100" class="form-range"><br>
         
@@ -30,6 +31,7 @@
       <br>
       <h2>Résultats : </h2>
       <ul>
+        <!-- mise en place d'une boucle v-for pour afficher les noms des héros en fonction de la 'filteredSuperheros' -->
         <li v-for="superheros in filteredSuperheros" :key="superheros.id">
           <p>{{ superheros.name }}
         </li>

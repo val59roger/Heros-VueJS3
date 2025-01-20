@@ -10,7 +10,7 @@ const app = Vue.createApp({
       }
     },  
     computed: {
-        // Propriété calculée pour filtrer les superhéros
+        /* Propriété calculée pour filtrer les superhéros */
         filteredSuperheros() {
           return this.superheros.filter(superhero => 
             superhero.powerstats.strength >= this.filters.strength &&
@@ -20,10 +20,11 @@ const app = Vue.createApp({
         },
     },  
     mounted() {
-        // Charger les données pour ce héros spécifique
+        /* Charger les données pour ce héros spécifique */
         axios.get('https://cdn.jsdelivr.net/gh/rtomczak/superhero-api@0.3.0/api/all.json')
           .then(response => {
-            this.superheros = response.data; // Trouver le héros correspondant
+            /* Trouver le héros correspondant */ 
+            this.superheros = response.data;
           })
           .catch(error => {
             console.error('Erreur lors du chargement des détails du héros:', error);
